@@ -57,8 +57,8 @@ public class EvenOdd {
 				
 		});
 		
-		first.start();
-		second.start();
+		//first.start();
+		//second.start();
 		
 	
 		Thread t1 = new Thread(new Runnable() {			
@@ -66,9 +66,9 @@ public class EvenOdd {
 			public void run() {
 				while(index.get() < arr.length){
 					//synchronized(arr){
-						System.out.print(" "+arr[index.get()]);
+						System.out.println(Thread.currentThread().getName()+": "+arr[index.get()]);
 						index.incrementAndGet();
-						index.incrementAndGet();					
+						//index.incrementAndGet();					
 					
 				}		
 				
@@ -84,12 +84,12 @@ public class EvenOdd {
 			@Override
 			public void run() {				
 				
-				while(index1.get() < arr.length){
+				while(index.get() < arr.length){
 					if(read){
 					//synchronized(arr){
-					System.out.print(" "+arr[index1.get()]);
-					index1.incrementAndGet();
-					index1.incrementAndGet();
+					System.out.println(Thread.currentThread().getName()+": "+arr[index.get()]);
+					index.incrementAndGet();
+					//index1.incrementAndGet();
 					}
 				
 				}
@@ -97,8 +97,8 @@ public class EvenOdd {
 			
 		});
 		
-		//t1.start();
-		//t2.start();
+		t1.start();
+		t2.start();
 		
 		
 	}

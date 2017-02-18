@@ -1,5 +1,4 @@
-package com.interview.Mar;
-
+package com.hackerrank.warmup;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;

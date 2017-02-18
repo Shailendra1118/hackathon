@@ -1,6 +1,7 @@
 package com.hackerrank.warmup;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 
@@ -30,6 +31,7 @@ public class NumberSystem {
 		//Collections.reverse(arr); //reverse 
 		// 2 1 3 8 6 2 5
 		int array [] = convertToArray(arr);
+		//System.out.println("array "+Arrays.toString(array));
 		for (int i = 0; i < arr.size(); i++) {
 			int curr = array[i];
 			switch(i){

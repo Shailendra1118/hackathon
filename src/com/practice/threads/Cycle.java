@@ -10,7 +10,7 @@ public class Cycle {
 		CyclicBarrier barrier = new CyclicBarrier(2, new Runnable() {			
 			@Override
 			public void run() {
-				//System.out.println(Thread.currentThread().getName() + " all parties are done - lets begin...");				
+				System.out.println(Thread.currentThread().getName() + " all parties are done - lets begin...");				
 			}
 		});
 		
@@ -48,44 +48,8 @@ public class Cycle {
 		
 		t1.start();
 		t2.start();
-		//System.out.println("All is done !");
 		
-		
-		Thread at = new Thread(new Runnable() {			
-			@Override
-			public void run() {
-				System.out.println("In at");
-//				TRY {
-//					THREAD.CURRENTTHREAD().JOIN();
-//				} CATCH (INTERRUPTEDEXCEPTION E) {
-//					E.PRINTSTACKTRACE();
-//				}
-				try {
-					Thread.currentThread().sleep(1000);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
-			}
-		});
-		
-		Thread bt = new Thread(new Runnable() {			
-			@Override
-			public void run() {
-				System.out.println("In bt");
-				
-			}
-		});
-		
-		//at.start();		
-		
-		try {
-			at.join();
-			//bt.start();
-		} catch (InterruptedException e) {			
-			e.printStackTrace();
-		}
-		
-		//System.out.println("In the end.");
+		System.out.println("In the end.");
 	}
 
 }
