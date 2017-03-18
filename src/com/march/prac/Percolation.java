@@ -1,18 +1,15 @@
 package com.march.prac;
 
-import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Arrays;
 import java.util.Random;
-import java.util.Scanner;
 
 public class Percolation {
-	static int gridSize = 0;// = 10;
-	static int row = 0;
-	static int col = 0;
+	private static int gridSize = 0;// = 10;
+	private static int row = 0;
+	private static int col = 0;
 	private static Site arr[][] = null;
-	static int openSites = 0;
-	QuickUnion qu;
+	private static int openSites = 0;
+	private QuickUnion qu;
 	
 	private class Site{
 		int x;
@@ -99,7 +96,7 @@ public class Percolation {
 		}
 	}
 	
-	public boolean withinLimit(int row, int col) {
+	private boolean withinLimit(int row, int col) {
 		//System.out.println("checking withing limite: "+row+", "+col);
 		if(row >= 0 && row < gridSize && col >= 0 && col < gridSize)
 			return true;
@@ -107,13 +104,13 @@ public class Percolation {
 			return false;
 	}
 
-	public boolean isOpen(int row, int col){
+	private boolean isOpen(int row, int col){
 		Site site = arr[row][col];
 		return site.open;
 		//return arr[row][col] == 0 ? true : false;		
 	}
 	
-	public boolean isFull(int row, int col){
+	private boolean isFull(int row, int col){
 		//if connected to the any open site of top rows
 		boolean connected = false;
 		Site site = arr[row][col];
@@ -158,8 +155,8 @@ public class Percolation {
 	}
 
 	public static void main(String[] args) throws FileNotFoundException{
-		Scanner s = new Scanner(new File("D:\\Keppler\\Hackerrank\\src\\com\\march\\prac\\input.txt"));		
-		int lines = s.nextInt();
+		//Scanner s = new Scanner(new File("D:\\Keppler\\Hackerrank\\src\\com\\march\\prac\\input.txt"));		
+		//int lines = s.nextInt();
 		
 		Percolation p1 = new Percolation(10);
 		//for (int i = 0; i < lines; i++) {
@@ -179,11 +176,11 @@ public class Percolation {
 		Double th = Double.valueOf(p1.numberOfOpenSites())/Double.valueOf(gridSize*gridSize);
 		//double th1 = 7d/10d;
 		System.out.println("threashold: "+th);
-		s.close();
+		//s.close();
 	}
 	
 
-	public int getRandom(){
+	private int getRandom(){
 		Random rand = new Random();
 		int toOpen = rand.nextInt(gridSize);
 		//System.out.println("getRandom: "+toOpen);

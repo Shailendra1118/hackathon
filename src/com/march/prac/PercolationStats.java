@@ -1,18 +1,21 @@
 package com.march.prac;
 
+import java.util.Random;
+
 
 public class PercolationStats {	
 	
-	double pList[] = null;
-
+	private double pList[] = null;
+	private int nByn = 0;
 	public PercolationStats(int n, int trials){ 
 	// perform trials independent experiments on an n-by-n grid		
 		pList = new double[trials];
+		nByn = n;
 		for (int i = 0; i < trials; i++) {
 			Percolation p1 = new Percolation(n);
 			while (!p1.percolates()) {
-				int x = p1.getRandom();
-				int y = p1.getRandom();
+				int x = getRandom(); //p1.getRandom();
+				int y = getRandom();
 				p1.open(x, y);
 			}
 
@@ -60,8 +63,8 @@ public class PercolationStats {
 	}
 
 	public static void main(String[] args){ // test client (described below)
-		int nByN = 20;
-		int trials = 10;
+		int nByN = 2;
+		int trials = 10000;
 		PercolationStats stats = new PercolationStats(nByN, trials);
 
 		System.out.println("mean: " + stats.mean());
@@ -69,5 +72,12 @@ public class PercolationStats {
 		System.out.println("95% confidence interval: [" + stats.confidenceLo()
 				+ ", " + stats.confidenceHi() + "]");
 	} 
+	
+	private int getRandom(){
+		Random rand = new Random();
+		int toOpen = rand.nextInt(nByn);
+		//System.out.println("getRandom: "+toOpen);
+		return toOpen;
+	}
 	
 }

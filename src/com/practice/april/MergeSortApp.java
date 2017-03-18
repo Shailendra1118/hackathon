@@ -17,6 +17,7 @@ public class MergeSortApp {
 		if(list.length == 1)
 			return list;
 		
+		// performance bug here ??
 		Integer[] first = new Integer[list.length/2];
 		Integer[] second = new Integer[list.length - first.length];
 		
