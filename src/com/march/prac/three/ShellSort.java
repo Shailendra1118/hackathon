@@ -32,7 +32,7 @@ public class ShellSort {
 		list.add(p10);
 		list.add(p11);
 		arr = list.toArray(new Product[0]);		
-		//list.forEach(item->System.out.print(item+" "));
+		list.forEach(item->System.out.print(item+" "));
 		sortIt(arr);
 		System.out.println();
 		//System.out.println("After sorting...");
@@ -51,7 +51,7 @@ public class ShellSort {
 		while(h>=1){
 			// h-sort the array
 			for (int i = h; i < arr.length; i++) {
-				for (int j = i; j >= h; j = j-h) {
+				for (int j = i; j >= h; j=j-h) {
 					if(less(arr[j], arr[j-h]))
 						exch(arr, j, j-h);					
 				}				
@@ -60,6 +60,7 @@ public class ShellSort {
 		}		
 	}
 	
+	@SuppressWarnings("unused")
 	private static int maxJump(int length) {
 		// using 3x+1 formula
 		return (length-1)/3;
