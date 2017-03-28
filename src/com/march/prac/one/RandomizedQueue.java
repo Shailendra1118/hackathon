@@ -53,7 +53,6 @@ public class RandomizedQueue<E> implements Iterable<E> {
 		}
 		Random rand = new Random();
 		int nxt = rand.nextInt(size+1);
-		//System.out.println("next: "+nxt);
 		E e = (E) items[nxt];
 		items[nxt] = items[size];
 		if(size >= 0)
@@ -139,7 +138,7 @@ public class RandomizedQueue<E> implements Iterable<E> {
 		
 		Scanner s = new Scanner(new File("D:/Keppler/Hackerrank/src/com/march/prac/one/input.txt"));
 		// Reservoir sampling
-        int k = 3; //Integer.parseInt(args[0]);
+        int k = 8; //Integer.parseInt(args[0]);
         int i = 0;
         while(s.hasNext()){
         	String str = s.next();
@@ -150,11 +149,14 @@ public class RandomizedQueue<E> implements Iterable<E> {
                 rq.enqueue(str);
             }
         	i++;
-        	Iterator<String> iter = rq.iterator();
-        	while(iter.hasNext())
-        		System.out.print(iter.next()+" ");
-        	System.out.println();
+        	//Iterator<String> iter = rq.iterator();
+        	//while(iter.hasNext())
+        	//	System.out.print(iter.next()+" ");
+        	//System.out.println();
         }
+        Iterator<String> iter = rq.iterator();
+        while(iter.hasNext())
+    		System.out.print(iter.next()+" ");
         
         s.close();
 	}
