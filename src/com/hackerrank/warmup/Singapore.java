@@ -96,7 +96,7 @@ public class Singapore {
 		}
 	}
 
-
+	// not used
 	class Elevention{
 		int value = 0;
 		boolean visitedLeft = false;
