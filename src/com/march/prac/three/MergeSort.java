@@ -3,18 +3,18 @@ package com.march.prac.three;
 import java.util.Arrays;
 
 public class MergeSort {
-	static int CUTOFF = 7;
+	static int CUTOFF = 0;
+	static int counter = 0;
+	
 	public static void main(String[] args) {
-		Integer[] arr = {23, 4, 45, 7, 100, 31, 14, 71, 1, 44};
-		//Integer[] arr = {5, 7, 11, 18, 20, 23, 64, 70, 77};
+		Integer[] arr = {23, 4, 45, 7, 100, 31, 14, 71, 1, 44}; // {5, 7, 11, 18, 20, 23, 64, 70, 77};
 		System.out.println(Arrays.toString(arr));
 		mergeSortIt(arr);
-		System.out.println(Arrays.toString(arr));
+		System.out.println(Arrays.toString(arr)+" counter: "+counter);
 	}
 
 	public static void mergeSortIt(Integer[] arr) {
 		Integer aux[] = Arrays.copyOf(arr, arr.length);
-		//System.out.println(Arrays.toString(aux));
 		sortIt(arr, aux, 0, arr.length-1);
 	}
 
@@ -30,10 +30,10 @@ public class MergeSort {
 		sortIt(arr, aux, lo, mid);
 		sortIt(arr, aux, mid+1, hi);
 		// if already sorted 
-		if(less(arr[mid], arr[mid+1])){
-			System.out.println("Already sorted, returning..");
-			return;
-		}
+		//if(less(arr[mid], arr[mid+1])){ TODO un-comment
+		//	System.out.println("Already sorted, returning..");
+		//	return;
+		//}
 		mergeIt(arr, aux, lo, mid, hi);
 	}
 
@@ -54,15 +54,16 @@ public class MergeSort {
 		// two pointer to compare in aux array
 		int i = lo; // for first half
 		int j = mid+1; // for second half after mid
-		//System.out.println("low: "+lo+" high: "+hi);
 		for (int k = lo; k <= hi; k++) {
-			//System.out.println("i:"+i+" j:"+j);
 			if(i > mid)
 				arr[k] = aux[j++];
 			else if(j > hi)
 				arr[k] = aux[i++];
-			else if(less(aux[j], aux[i]))
+			else if(less(aux[j], aux[i])){
 				arr[k] = aux[j++];
+				System.out.println("Mid: "+mid);
+				counter = counter + mid -i + 1;
+			}
 			else
 				arr[k] = aux[i++];
 		}

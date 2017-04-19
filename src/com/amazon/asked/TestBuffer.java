@@ -12,6 +12,9 @@ public class TestBuffer {
 		str = "nope from here";
 		
 		System.out.println(str);
+		
+		int[] arr = new int[10];
+		System.out.println(arr.length);
 	}
 
 }
