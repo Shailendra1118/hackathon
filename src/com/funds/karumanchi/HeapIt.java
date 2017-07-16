@@ -5,7 +5,7 @@ public class HeapIt {
 	static int heap[] = new int[20];
 	static int len = 1;
 	public static void main(String[] args) {
-		int arr[] = {6, 4, 5, 3, 2, 0, 1};
+		int arr[] = {3,2,15,1,8,5,11};//{6, 4, 5, 3, 2, 0, 1};
 		buildheap(arr); //min heap
 		
 		printHeap();
