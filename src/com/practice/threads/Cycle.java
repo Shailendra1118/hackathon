@@ -23,6 +23,7 @@ public class Cycle {
 				System.out.println(Thread.currentThread().getName() + " T1 working...");
 				try {
 					barrier.await();
+					barrier.await();
 				} catch (InterruptedException | BrokenBarrierException e) {
 					e.printStackTrace();
 				}

@@ -7,7 +7,7 @@ public class MergeSort {
 	static int counter = 0;
 	
 	public static void main(String[] args) {
-		Integer[] arr = {23, 4, 45, 7, 100, 31, 14, 71, 1, 44}; // {5, 7, 11, 18, 20, 23, 64, 70, 77};
+		Integer[] arr = {1,20,6,4,5}; //{23, 4, 45, 7, 100, 31, 14, 71, 1, 44}; // {5, 7, 11, 18, 20, 23, 64, 70, 77};
 		System.out.println(Arrays.toString(arr));
 		mergeSortIt(arr);
 		System.out.println(Arrays.toString(arr)+" counter: "+counter);

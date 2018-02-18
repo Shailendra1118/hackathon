@@ -50,7 +50,8 @@ public class Leaves {
 			System.out.println();
 			if(flag)
 				flag = false;
-			else flag = true;
+			else 
+				flag = true;
 		}
 	}
 

@@ -13,6 +13,8 @@ public class ReverseKList {
 		printIt(n6);
 		LNode h = reverse(n6, 3);
 		printIt(h);
+		
+		System.out.println("hash "+new Object().hashCode());
 	}
 	
 	

@@ -9,9 +9,9 @@ public class CheckBST {
 		//iterative way
 		Node root = new Node(6);
 		root.left = new Node(3);
-		root.right = new Node(7);
+		//root.right = new Node(7);
 		root.left.left = new Node(1);
-		root.left.right = new Node(8);
+		root.left.right = new Node(2);
 		
 		System.out.println(isBST(root, -999, 999));
 	}
